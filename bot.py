@@ -12,10 +12,10 @@ def tweet(tweeted):
 	while (twt in tweeted):
 		twt = random.randint(0, 182) 	# Select random line
 	for i, line in enumerate(allTweets):
-		if (i == twt): 					# Find line and tweet it
+		if (i == twt): 			# Find line and tweet it
 			print (line)
 			api.update_status(status=(line))
-			tweeted.append(i)			# Append line number to a list
+			tweeted.append(i)	# Append line number to a list
 
 def main(lo, hi):
 	start = time.gmtime().tm_hour
@@ -24,17 +24,17 @@ def main(lo, hi):
 	while (True):
 		current = time.gmtime().tm_hour
 
-		if (len(tweeted) > 60):			# Reset List
+		if (len(tweeted) > 60):		# Reset List
 			tweeted = []
 
 		if (current == start + diff):	# Check if its been diff hrs from start
 			tweet(tweeted)
-			start = current
+			start = current		# Change start to the current time
 		
-		diff = random.randint(lo, hi)		
+		diff = random.randint(lo, hi)	# Get new diff based on random int
 		time.sleep(random.randint(30,5900))
 	return None
 
 
-main(1,1)
+main(2,5)
 
