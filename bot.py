@@ -2,6 +2,7 @@ import time
 import random
 import tweepy
 
+# Access Keys redacted for privacy and security
 auth = tweepy.OAuthHandler("[REDACTED]", "[REDACTED]")
 auth.set_access_token("[REDACTED]", "[REDACTED]")
 api = tweepy.API(auth)
@@ -18,11 +19,11 @@ def tweet(tweeted):
 			tweeted.append(i)	# Append line number to a list
 
 def main(lo, hi):
-	start = time.gmtime().tm_hour
+	start = time.gmtime().tm_hour		# Start time on first execution
 	tweeted = []
-	diff = 0
+	diff = 0				# This is to tweet upon execution
 	while (True):
-		current = time.gmtime().tm_hour
+		current = time.gmtime().tm_hour # Update current time in hours
 
 		if (len(tweeted) > 60):		# Reset List
 			tweeted = []
@@ -36,5 +37,5 @@ def main(lo, hi):
 	return None
 
 
-main(2,5)
+main(2,5)					# Give range. Tweets range from every 2 to 5 hours
 
