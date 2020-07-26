@@ -33,7 +33,7 @@ def main(lo, hi):
 			start = current		# Change start to the current time
 		
 		diff = random.randint(lo, hi)	# Get new diff based on random int
-		time.sleep(random.randint(30,5900))
+		time.sleep(random.randint(30,1500))
 	return None
 
 
